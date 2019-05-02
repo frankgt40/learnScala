@@ -41,5 +41,17 @@ object Objects {
 
     // Scala Applications = Scala object with
     // def main(args: Array[String]): Unit
+
+    val sth: Array[Char] = Array('a', 'b', 'c')
+    (for (i <- sth.iterator) yield(i, i)).foreach(x => println(s"x: $x"))
+    println(s"An array is instance of Iterable: ${sth.isInstanceOf[Iterable[Char]]}")
+    println(s"sth's type: ${sth.getClass}")
+    def printUtil(iterable: Iterable[Char]): Unit = {
+      println(s"iterable's type: ${iterable.getClass}")
+      iterable.iterator.foreach(x => println(s"item: ${x}"))
+    }
+    printUtil(sth)
+    sth.map(_*1)
+    sth.length
   }
 }
